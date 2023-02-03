@@ -40,13 +40,15 @@ inputDiv.addEventListener("keydown", (e) => {
 });
 
 const editTodo = function (i) {
-  if (todo.value) todos[i] = todo.value;
-
-  container.innerHTML = createMarkup().join("");
+  if (todo.value) {
+    todos[i] = todo.value;
+    container.innerHTML = createMarkup().join("");
+  }
 
   todo.value = "";
   todo.focus();
 };
+
 
 const deleteTodo = function (index) {
   todos = todos.filter((el, i) => todos[index] !== el);
